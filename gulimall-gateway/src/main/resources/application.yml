@@ -1,0 +1,33 @@
+spring:
+  cloud:
+    gateway:
+      routes:
+        - id: product_route
+          uri: lb://gulimall-product
+          predicates:
+            - Path=/api/product/**
+          filters:
+            - RewritePath=/api(?<segment>/?.*),$\{segment}
+
+        - id: third_party_route
+          uri: lb://gulimall-third-party
+          predicates:
+            - Path=/api/thirdparty/**
+          filters:
+            - RewritePath=/api/thirdparty(?<segment>/?.*),$\{segment}
+
+
+        - id: admin_route
+          uri: lb://renren-fast
+          predicates:
+            - Path=/api/**
+          filters:
+            - RewritePath=/api(?<segment>/?.*),/renren-fast$\{segment}
+
+##前端项目,/api - RewritePath=/foo(?<segment>/?.*), $\{segment}
+##- RewritePath=/foo/(?<segment>.*), /$\{segment}
+##http://localhost:88/api/captcha.jpg?uuid=5149e17b-2825-403a-8132-844a8f704910:
+## http://localhost:88/api/captcha.jpg http://renren-fast:8080/api/captcha.jpg
+## 真实路径 http://localhost:8080/renren-fast/captcha.jpg
+##访问路径 http://localhost:88/api/captcha.jpg?uuid=dd5e2f7d-12b7-4142-8d35-4cf99f1c3f14
+##转发后路径 http://192.168.31.205:8080/api/captcha.jpg?uuid=dd5e2f7d-12b7-4142-8d35-4cf99f1c3f14
