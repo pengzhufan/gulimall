@@ -57,4 +57,9 @@ public class AttrEntity implements Serializable {
 	 */
 	private Integer showDesc;
 
+	/**
+	 * 所属分类
+	 */
+	private Long valueType;
+
 }
