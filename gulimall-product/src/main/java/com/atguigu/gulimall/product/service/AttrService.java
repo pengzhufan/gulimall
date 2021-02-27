@@ -13,26 +13,27 @@ import java.util.Map;
 /**
  * 商品属性
  *
- * @author pzf
- * @email sunlightcs@gmail.com
- * @date 2021-01-13 23:25:22
+ * @author leifengyang
+ * @email leifengyang@gmail.com
+ * @date 2019-10-01 21:08:49
  */
 public interface AttrService extends IService<AttrEntity> {
 
     PageUtils queryPage(Map<String, Object> params);
 
+    void saveAttr(AttrVo attr);
+
     PageUtils queryBaseAttrPage(Map<String, Object> params, Long catelogId, String type);
 
     AttrRespVo getAttrInfo(Long attrId);
 
-    void saveAttr(AttrVo attr);
-
     void updateAttr(AttrVo attr);
-
-    void deleteRelation(AttrGroupRelationVo[] vos);
 
     List<AttrEntity> getRelationAttr(Long attrgroupId);
 
+    void deleteRelation(AttrGroupRelationVo[] vos);
+
     PageUtils getNoRelationAttr(Map<String, Object> params, Long attrgroupId);
+
 }
 

@@ -38,16 +38,16 @@ import org.springframework.util.StringUtils;
 @Service("attrService")
 public class AttrServiceImpl extends ServiceImpl<AttrDao, AttrEntity> implements AttrService {
 
-    @Autowired(required = false)
+    @Autowired
     AttrAttrgroupRelationDao relationDao;
 
-    @Autowired(required = false)
+    @Autowired
     AttrGroupDao attrGroupDao;
 
-    @Autowired(required = false)
+    @Autowired
     CategoryDao categoryDao;
 
-    @Autowired(required = false)
+    @Autowired
     CategoryService categoryService;
 
 

@@ -20,9 +20,9 @@ import com.atguigu.common.utils.R;
 /**
  * 
  *
- * @author pzf
- * @email sunlightcs@gmail.com
- * @date 2021-01-15 00:11:44
+ * @author leifengyang
+ * @email leifengyang@gmail.com
+ * @date 2019-11-17 13:50:10
  */
 @RestController
 @RequestMapping("ware/purchasedetail")

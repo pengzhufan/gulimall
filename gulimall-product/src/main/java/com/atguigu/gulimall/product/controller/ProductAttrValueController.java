@@ -20,9 +20,9 @@ import com.atguigu.common.utils.R;
 /**
  * spu属性值
  *
- * @author pzf
- * @email sunlightcs@gmail.com
- * @date 2021-01-14 00:12:52
+ * @author leifengyang
+ * @email leifengyang@gmail.com
+ * @date 2019-10-01 22:50:32
  */
 @RestController
 @RequestMapping("product/productattrvalue")

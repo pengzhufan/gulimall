@@ -10,16 +10,22 @@ import java.util.Map;
 /**
  * spu属性值
  *
- * @author pzf
- * @email sunlightcs@gmail.com
- * @date 2021-01-13 23:25:22
+ * @author leifengyang
+ * @email leifengyang@gmail.com
+ * @date 2019-10-01 21:08:49
  */
 public interface ProductAttrValueService extends IService<ProductAttrValueEntity> {
 
     PageUtils queryPage(Map<String, Object> params);
 
+    void saveProductAttr(List<ProductAttrValueEntity> collect);
+
+
     List<ProductAttrValueEntity> baseAttrlistforspu(Long spuId);
 
+
     void updateSpuAttr(Long spuId, List<ProductAttrValueEntity> entities);
+
+
 }
 
